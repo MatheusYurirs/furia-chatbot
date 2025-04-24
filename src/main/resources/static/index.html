@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FURIA Chatbot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: 'Inter', sans-serif;
+          background-color: #000;
+          color: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          overflow: hidden;
+        }
+
+        .container {
+          background: rgba(0, 0, 0, 0.6);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border: 2px solid rgba(255, 255, 255, 0.08);
+          border-radius: 16px;
+          padding: 25px;
+          max-width: 700px;
+          width: 90%;
+          box-shadow:
+            0 0 8px rgba(229, 0, 90, 0.6),
+            0 0 20px rgba(229, 0, 90, 0.4),
+            0 0 60px rgba(229, 0, 90, 0.2);
+        }
+
+        .header {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+
+        .header img {
+          width: 80px;
+          filter: drop-shadow(0 0 8px white);
+        }
+
+        .header h1 {
+          font-family: 'Orbitron', sans-serif;
+          font-size: 2rem;
+          color: #e5005a;
+          text-shadow: 0 0 10px #e5005a;
+        }
+
+        #chat-box {
+          background-color: #111;
+          padding: 20px;
+          border-radius: 10px;
+          height: 300px;
+          overflow-y: auto;
+          margin-bottom: 15px;
+          border: 1px solid #333;
+          font-size: 0.95rem;
+          box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .message {
+          margin-bottom: 10px;
+          animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .user {
+          color: #00ffff;
+          background: #000;
+          padding: 8px 12px;
+          border-radius: 10px;
+          width: fit-content;
+          margin-left: auto;
+        }
+
+        .bot {
+          color: #90ee90;
+          background: #1c1c1c;
+          padding: 8px 12px;
+          border-radius: 10px;
+          width: fit-content;
+        }
+
+        .input-area {
+          display: flex;
+          gap: 10px;
+        }
+
+        input, button {
+          padding: 12px;
+          font-size: 1rem;
+          border: none;
+          border-radius: 6px;
+        }
+
+        input {
+          flex: 1;
+          background-color: #1a1a1a;
+          color: #fff;
+          border: 1px solid #555;
+        }
+
+        button {
+          background-color: #e5005a;
+          color: white;
+          font-weight: bold;
+          cursor: pointer;
+        }
+
+        button:hover {
+          background-color: #ff0066;
+        }
+
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <img src="img/logo-furia.png" alt="Logo FURIA">
+        <h1>FURIA Chatbot</h1>
+    </div>
+
+    <div id="chat-box"></div>
+
+    <div class="input-area">
+        <input type="text" id="userInput" placeholder="Digite sua pergunta..." onkeydown="checkEnter(event)">
+        <button onclick="sendMessage()">Enviar</button>
+    </div>
+</div>
+
+<script>
+    async function sendMessage() {
+      const inputField = document.getElementById("userInput");
+      const chatBox = document.getElementById("chat-box");
+      const message = inputField.value.trim();
+      if (!message) return;
+
+      chatBox.innerHTML += `<div class="message user"><strong>Você:</strong> ${message}</div>`;
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      const response = await fetch("/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message })
+      });
+
+      const data = await response.json();
+
+      chatBox.innerHTML += `<div class="message bot"><strong>FURIA:</strong> ${data.response}</div>`;
+      chatBox.scrollTop = chatBox.scrollHeight;
+      inputField.value = "";
+    }
+
+    function checkEnter(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        sendMessage();
+      }
+    }
+</script>
+</body>
+</html>
