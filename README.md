@@ -1,9 +1,9 @@
 # 🔥 FURIA Chatbot - Experiência Conversacional para Fãs de CS:GO
 
-[![Java](![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white))]()
-[![Spring Boot](![Srping_Boot]https://img.shields.io/badge/Spring%20Boot-6DB33F.svg?style=for-the-badge&logo=Spring-Boot&logoColor=white)]()
-[![Docker](![Docker][(https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)](https://img.shields.io/badge/Docker-2496ED.svg?style=for-the-badge&logo=Docker&logoColor=white))]()
-[![Deployed on Render](![Render][(https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white)](https://img.shields.io/badge/Render-000000.svg?style=for-the-badge&logo=Render&logoColor=white))]()
+[![Java](https://img.shields.io/badge/Java-17-blue.svg)]()
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.0-brightgreen.svg)]()
+[![Docker](https://img.shields.io/badge/Docker-Enabled-blue.svg)]()
+[![Deployed on Render](https://img.shields.io/badge/Deployed-Render-46c1f6.svg)]()
 
 ---
 
