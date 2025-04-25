@@ -1,9 +1,9 @@
 # 🔥 FURIA Chatbot - Experiência Conversacional para Fãs de CS:GO
 
 [![Java](![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white))]()
-[![Spring Boot](![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white))]()
-[![Docker](![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white))]()
-[![Deployed on Render](![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white))]()
+[![Spring Boot](![Srping_Boot]https://img.shields.io/badge/Spring%20Boot-6DB33F.svg?style=for-the-badge&logo=Spring-Boot&logoColor=white)]()
+[![Docker](![Docker][(https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)](https://img.shields.io/badge/Docker-2496ED.svg?style=for-the-badge&logo=Docker&logoColor=white))]()
+[![Deployed on Render](![Render][(https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white)](https://img.shields.io/badge/Render-000000.svg?style=for-the-badge&logo=Render&logoColor=white))]()
 
 ---
 
